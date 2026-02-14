@@ -1,0 +1,14 @@
+../Drivers/CMSIS/Include/core_cm7.h:2229:22:SCB_EnableICache	1
+../Drivers/CMSIS/Include/core_cm7.h:2281:22:SCB_EnableDCache	3
+../Src/system.c:13:6:fpu_enable	1
+../Src/system.c:23:6:cache_enable	1
+../Src/system.c:29:6:systick_init	1
+../Src/system.c:38:6:clock_init	7
+../Src/system.c:100:6:nvic_init	1
+../Src/system.c:109:6:watchdog_init	1
+../Src/system.c:115:6:mpu_init	1
+../Src/system.c:122:6:gpio_init	1
+../Src/system.c:127:6:power_init	1
+../Src/system.c:133:6:HardFault_Handler	1
+../Src/system.c:138:6:MemManage_Handler	1
+../Src/system.c:143:6:system_init	1

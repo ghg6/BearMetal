@@ -1,0 +1,2 @@
+../Src/system.c:9:6:fpu_enable	0	static,ignoring_inline_asm
+../Src/system.c:19:6:global_init	0	static
