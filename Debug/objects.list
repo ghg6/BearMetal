@@ -1,4 +1,5 @@
 "./Src/bsp.o"
+"./Src/clock.o"
 "./Src/gpio.o"
 "./Src/main.o"
 "./Src/rcc.o"

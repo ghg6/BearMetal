@@ -7,6 +7,7 @@ FLASH->ACR |= FLASH_ACR_PRFTEN; // Enable prefetch buffer
 FLASH->ACR |= FLASH_ACR_ARTEN; // Enable ART accelerator
 ```
 ![[Pasted image 20260214113803.png]]
+Flash Access Control Register
 ### Latency
 Because the access time is slower than the CPU cycle, the CPU must wait several cycles otherwise it will read garbage
 
@@ -23,6 +24,9 @@ Adaptive Real-Time Memory Accelerator caches instructions. It does this based on
 ```c
 RCC->CR |= RCC_CR_HSEON;
 ```
+![[Pasted image 20260214122722.png]]
+Control clock register
+
 This activates the high speed external (HSE) oscillator the internal oscillator has an accuracy of +/-1-2%, the HSE has an accuracy of +/-10-50 ppm. This applies power to the oscillator amplifier that drives the crystal
 
 ```c

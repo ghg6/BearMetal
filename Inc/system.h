@@ -13,9 +13,11 @@
 #include "config.h"
 #include "rcc.h"
 #include "gpio.h"
+#include "clock.h"
+#include "timer.h"
 
 void fpu_enable(void);
-void clock_init(void);
+
 void cache_enable(void);
 void system_init(void);
 

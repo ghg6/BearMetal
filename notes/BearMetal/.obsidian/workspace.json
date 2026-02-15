@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "system/clock_init.md",
+                "file": "system/mpu_init.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "clock_init"
+              "title": "mpu_init"
             }
           },
           {
@@ -242,10 +242,13 @@
   },
   "active": "b627a7d36866e40b",
   "lastOpenFiles": [
-    "static/Pasted image 20260214113803.png",
     "system/fpu_enable.md",
+    "system/mpu_init.md",
     "system/systick_init.md",
-    "system/clock_init.md",
+    "clock/clock_init.md",
+    "clock",
+    "static/Pasted image 20260214122722.png",
+    "static/Pasted image 20260214113803.png",
     "static/Pasted image 20260212212211.png",
     "static/Pasted image 20260211220119.png",
     "static/Pasted image 20260212212059.png",
