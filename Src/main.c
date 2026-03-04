@@ -34,6 +34,9 @@ int main(void)
         if (timer_elapsed(&led_timer, 1000)) {
             bsp_led_toggle();
         }
+
+        // This will need to be handeld differently with RTOS
+        kick_watchdog();
     }
 }
 

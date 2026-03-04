@@ -1,5 +1,5 @@
 /*
- * global.c
+ * system.c
  *
  *  Created on: Feb 7, 2026
  *      Author: ghrug
@@ -42,12 +42,6 @@ void nvic_init(void)
 	#endif
 }
 
-void watchdog_init(void)
-{
-    // Timeout ~2 seconds
-    // Prevents system hang if code crashes
-}
-
 void mpu_init(void)
  {
      // Disable MPU during configuration
@@ -82,11 +76,6 @@ void mpu_init(void)
      MPU->CTRL = (1 << 0) | (1 << 2);  // ENABLE and PRIVDEFENA
  }
 
-void gpio_init(void)
-{
-    // LED pins, button pins, etc.
-}
-
 void power_init(void)
 {
     // Sleep modes for low-power operation
@@ -115,6 +104,8 @@ void system_init(void)
     cache_enable();
 
     mpu_init();
+
+    watchdog_init();
 
     // Only enable systick if not using RTOS
 	#ifndef USING_RTOS

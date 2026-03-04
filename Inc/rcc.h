@@ -12,4 +12,6 @@
 
 void rcc_enable_gpio(GPIO_TypeDef *gpio);
 
+void rcc_enable_usart(USART_TypeDef *USART);
+
 #endif /* RCC_H_ */

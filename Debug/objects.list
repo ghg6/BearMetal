@@ -8,4 +8,5 @@
 "./Src/system.o"
 "./Src/timer.o"
 "./Src/uart.o"
+"./Src/watchdog.o"
 "./Startup/startup_stm32f767zitx.o"

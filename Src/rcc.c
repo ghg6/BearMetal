@@ -27,4 +27,19 @@ void rcc_enable_gpio(GPIO_TypeDef *gpio)
     (void)RCC->AHB1ENR;
 }
 
+void rcc_enable_usart(USART_TypeDef *USART)
+{
+	if (USART == USART2)
+	{
+		// Enable USART2 clock
+		RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
+
+		// Enable GPIOD clock
+		RCC->AHB1ENR |= RCC_AHB1ENR_GPIODEN;
+
+
+	}
+
+}
+
 

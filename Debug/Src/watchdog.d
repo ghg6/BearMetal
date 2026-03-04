@@ -1,4 +1,4 @@
-Src/uart.o: ../Src/uart.c ../Inc/uart.h \
+Src/watchdog.o: ../Src/watchdog.c ../Inc/watchdog.h \
  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h \
  ../Drivers/CMSIS/Include/core_cm7.h \
@@ -7,8 +7,8 @@ Src/uart.o: ../Src/uart.c ../Inc/uart.h \
  ../Drivers/CMSIS/Include/cmsis_gcc.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h \
- ../Inc/rcc.h ../Inc/gpio.h
-../Inc/uart.h:
+ ../Inc/config.h
+../Inc/watchdog.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h:
 ../Drivers/CMSIS/Include/core_cm7.h:
@@ -17,5 +17,4 @@ Src/uart.o: ../Src/uart.c ../Inc/uart.h \
 ../Drivers/CMSIS/Include/cmsis_gcc.h:
 ../Drivers/CMSIS/Include/mpu_armv7.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h:
-../Inc/rcc.h:
-../Inc/gpio.h:
+../Inc/config.h:

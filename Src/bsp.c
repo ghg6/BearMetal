@@ -1,6 +1,6 @@
 /*
  * bsp.c
- *
+ * Board Support Package
  *  Created on: Feb 7, 2026
  *      Author: ghrug
  */

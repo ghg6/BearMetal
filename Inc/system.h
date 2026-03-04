@@ -15,10 +15,12 @@
 #include "gpio.h"
 #include "clock.h"
 #include "timer.h"
+#include "watchdog.h"
 
 void fpu_enable(void);
 
 void cache_enable(void);
+
 void system_init(void);
 
 #endif /* SYSTEM_H_ */
