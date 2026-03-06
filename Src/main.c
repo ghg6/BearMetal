@@ -18,6 +18,7 @@
 
 #include <system.h>
 #include "bsp.h"
+#include "uart_bsp.h"
 
 static void delay(volatile uint32_t n) { while (n--) __NOP(); }
 

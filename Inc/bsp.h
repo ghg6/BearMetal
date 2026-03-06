@@ -8,7 +8,11 @@
 #ifndef BSP_H_
 #define BSP_H_
 
-#pragma once
+#include "gpio_drv.h"
+#include "stm32f7xx.h"
+#include "rcc.h"
+
+
 void bsp_init(void);
 void bsp_led_toggle(void);
 

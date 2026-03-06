@@ -7,6 +7,7 @@
 
 #ifndef GPIO_H_
 #define GPIO_H_
+/*
 
 #include <stdint.h>
 #include "stm32f7xx.h"
@@ -49,6 +50,6 @@ void gpio_config(GPIO_TypeDef *gpio, uint32_t pin, const gpio_pin_cfg_t *cfg);
 void gpio_write(GPIO_TypeDef *gpio, uint32_t pin, uint8_t value);
 void gpio_toggle(GPIO_TypeDef *gpio, uint32_t pin);
 uint8_t gpio_read(GPIO_TypeDef *gpio, uint32_t pin);
-
+*/
 
 #endif /* GPIO_H_ */

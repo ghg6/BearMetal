@@ -1,2 +1,9 @@
 ../Src/system.c:9:6:fpu_enable	1
-../Src/system.c:19:6:global_init	1
+../Src/system.c:19:6:cache_enable	3
+../Src/system.c:25:6:systick_init	1
+../Src/system.c:36:6:nvic_init	1
+../Src/system.c:45:6:mpu_init	1
+../Src/system.c:79:6:power_init	1
+../Src/system.c:85:6:HardFault_Handler	1
+../Src/system.c:90:6:MemManage_Handler	1
+../Src/system.c:95:6:system_init	1

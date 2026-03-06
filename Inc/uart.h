@@ -7,11 +7,11 @@
 
 #ifndef UART_H_
 #define UART_H_
-
+/*
 #include "stdint.h"
 #include "stm32f7xx.h"
 #include "rcc.h"
-#include "gpio.h"
+#include "gpio_drv.h"
 
 #define UART_MODE_POS 2
 
@@ -39,7 +39,7 @@ typedef struct {
 
 extern gpio_pin_cfg_t usart2_gpio_config;
 extern UsartObject usart2;
-
+*/
 
 
 #endif /* UART_H_ */

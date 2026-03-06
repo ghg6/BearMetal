@@ -1,0 +1,4 @@
+../Drivers/Src/uart_drv.c:10:6:calc_baud_rate	16	static
+../Drivers/Src/uart_drv.c:15:6:kick_tx	16	static
+../Drivers/Src/uart_drv.c:22:6:kick_rx	16	static
+../Drivers/Src/uart_drv.c:28:6:uart_init	24	static

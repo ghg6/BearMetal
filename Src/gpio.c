@@ -5,6 +5,7 @@
  *      Author: ghrug
  */
 
+/*
 #include "../Inc/gpio.h"
 
 static inline void set_2bit_field(volatile uint32_t *reg, uint32_t pin, uint32_t val)
@@ -62,7 +63,7 @@ uint8_t gpio_read(GPIO_TypeDef *gpio, uint32_t pin)
 {
     return (uint8_t)((gpio->IDR >> pin) & 1u);
 }
-
+*/
 
 
 

@@ -4,7 +4,7 @@
  *  Created on: Feb 13, 2026
  *      Author: ghrug
  */
-
+/*
 #include "uart.h"
 
 void uart_init(UsartObject *usart_obj)
@@ -46,3 +46,4 @@ UsartObject usart2 = {
 	.baud_rate = 115200,
 	.mode = RXTX
 };
+*/

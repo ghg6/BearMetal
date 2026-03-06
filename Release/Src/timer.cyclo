@@ -1,0 +1,4 @@
+../Src/timer.c:19:8:timer_init	1
+../Src/timer.c:42:12:timer_get_ms	1
+../Src/timer.c:63:11:timer_elapsed	2
+../Src/timer.c:79:8:SysTick_Handler	1

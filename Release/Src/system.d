@@ -7,7 +7,8 @@ Src/system.o: ../Src/system.c ../Inc/system.h \
  ../Drivers/CMSIS/Include/cmsis_gcc.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h \
- ../Inc/rcc.h ../Inc/gpio.h
+ ../Inc/config.h ../Inc/rcc.h ../Inc/gpio.h ../Inc/clock.h ../Inc/timer.h \
+ ../Inc/watchdog.h
 ../Inc/system.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h:
@@ -17,5 +18,9 @@ Src/system.o: ../Src/system.c ../Inc/system.h \
 ../Drivers/CMSIS/Include/cmsis_gcc.h:
 ../Drivers/CMSIS/Include/mpu_armv7.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h:
+../Inc/config.h:
 ../Inc/rcc.h:
 ../Inc/gpio.h:
+../Inc/clock.h:
+../Inc/timer.h:
+../Inc/watchdog.h:

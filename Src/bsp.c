@@ -6,9 +6,8 @@
  */
 
 #include "bsp.h"
-#include "stm32f7xx.h"
-#include "rcc.h"
-#include "gpio.h"
+
+
 
 #define LED_GPIO GPIOB
 #define LED_PIN  0u

@@ -8,7 +8,12 @@ Src/main.o: ../Src/main.c ../Inc/system.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h \
  ../Inc/config.h ../Inc/rcc.h ../Inc/gpio.h ../Inc/clock.h ../Inc/timer.h \
- ../Inc/watchdog.h ../Inc/bsp.h
+ ../Inc/watchdog.h ../Inc/bsp.h \
+ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h \
+ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/uart_bsp.h \
+ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/uart_drv.h \
+ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h \
+ ../Inc/rcc.h
 ../Inc/system.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h:
@@ -25,3 +30,8 @@ Src/main.o: ../Src/main.c ../Inc/system.h \
 ../Inc/timer.h:
 ../Inc/watchdog.h:
 ../Inc/bsp.h:
+C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h:
+C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/uart_bsp.h:
+C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/uart_drv.h:
+C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h:
+../Inc/rcc.h:

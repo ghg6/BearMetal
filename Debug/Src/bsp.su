@@ -1,2 +1,2 @@
-../Src/bsp.c:16:6:bsp_init	8	static,ignoring_inline_asm
-../Src/bsp.c:32:6:bsp_led_toggle	8	static
+../Src/bsp.c:15:6:bsp_init	8	static,ignoring_inline_asm
+../Src/bsp.c:31:6:bsp_led_toggle	8	static
