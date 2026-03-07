@@ -27,7 +27,7 @@ typedef struct {
     uart_pins_cfg_t pins;
 } uart_bsp_cfg_t;
 
-
+extern uart_bsp_cfg_t uart2_bsp;
 
 void uart_bsp_init(uart_bsp_cfg_t *cfg);
 

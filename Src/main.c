@@ -27,6 +27,8 @@ int main(void)
     system_init();
     bsp_init();
 
+    uart_bsp_init(&uart2_bsp);
+
     // Timer for LED toggle
     uint32_t led_timer = 0;
 

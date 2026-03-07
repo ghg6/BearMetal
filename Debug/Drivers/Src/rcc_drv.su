@@ -1,3 +1,5 @@
-../Drivers/Src/rcc_drv.c:10:6:rcc_enable_gpio	16	static
-../Drivers/Src/rcc_drv.c:30:6:rcc_enable_usart	16	static
-../Drivers/Src/rcc_drv.c:45:6:rcc_enable_usart2	4	static
+../Drivers/Src/rcc_drv.c:13:9:ref_decrement_check_zero	16	static
+../Drivers/Src/rcc_drv.c:26:6:rcc_enable_gpio	16	static
+../Drivers/Src/rcc_drv.c:79:6:rcc_disable_gpio	16	static
+../Drivers/Src/rcc_drv.c:138:6:rcc_enable_usart	16	static
+../Drivers/Src/rcc_drv.c:149:6:rcc_disable_usart	16	static

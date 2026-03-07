@@ -13,7 +13,7 @@
 #define UART2_TX_BUF_SIZE 256
 
 void uart_bsp_init(uart_bsp_cfg_t *cfg) {
-	rcc_enable_usart2();
+	rcc_enable_usart(cfg->usart.usart);
     gpio_config(cfg->pins.port, cfg->pins.tx_pin, &cfg->pins.pin_cfg);
     gpio_config(cfg->pins.port, cfg->pins.rx_pin, &cfg->pins.pin_cfg);
     uart_init(&cfg->usart);
