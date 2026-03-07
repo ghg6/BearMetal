@@ -8,21 +8,28 @@
 #ifndef UART_BSP_H_
 #define UART_BSP_H_
 
+#include "stm32f7xx.h"
 #include "uart_drv.h"
 #include "gpio_drv.h"
+#include "rcc_drv.h"
 
+#define ENABLE_UART2
 
 typedef struct {
-	USART_TypeDef *usart;
-	GPIO_TypeDef *gpio_bus;
-
-	gpio_pin_cfg_t *gpio_config;
-
-	uint8_t rx_pin;
+	GPIO_TypeDef *port;
 	uint8_t tx_pin;
+	uint8_t rx_pin;
+	gpio_pin_cfg_t pin_cfg;
+} uart_pins_cfg_t;
+
+typedef struct {
+	UsartConfig usart;
+    uart_pins_cfg_t pins;
+} uart_bsp_cfg_t;
 
 
-} UsartObject;
+
+void uart_bsp_init(uart_bsp_cfg_t *cfg);
 
 
 

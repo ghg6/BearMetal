@@ -13,7 +13,8 @@ Src/main.o: ../Src/main.c ../Inc/system.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/uart_bsp.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/uart_drv.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h \
- ../Inc/rcc.h
+ ../Inc/rcc.h \
+ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/rcc_drv.h
 ../Inc/system.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f7xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/stm32f767xx.h:
@@ -35,3 +36,4 @@ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/uart_bsp.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/uart_drv.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h:
 ../Inc/rcc.h:
+C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/rcc_drv.h:

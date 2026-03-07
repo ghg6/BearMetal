@@ -37,7 +37,7 @@ typedef enum {
 } gpio_pupd_t;
 
 typedef struct {
-    gpio_mode_t  mode;
+	gpio_mode_t  mode;
     gpio_otype_t otype;   // used for output/AF
     gpio_speed_t speed;   // used for output/AF
     gpio_pupd_t  pupd;

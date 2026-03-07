@@ -1,2 +1,1 @@
-../BSP/Src/uart_bsp.c:8:6:uart_config_gpio	1
-../BSP/Src/uart_bsp.c:13:6:uart_config_rcc	1
+../BSP/Src/uart_bsp.c:15:6:uart_bsp_init	1
