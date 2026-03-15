@@ -110,8 +110,10 @@ void system_init(void)
     // Only enable systick if not using RTOS
 	#ifndef USING_RTOS
     //systick_init(CPU_FREQUENCY, TICK_FREQUENCY);
-    timer_init(CPU_FREQUENCY, TICK_FREQUENCY);
+    //timer_init(CPU_FREQUENCY, TICK_FREQUENCY);
 	#endif
+
+    timer_init(TIM6, &timer6, tim6_led_callback);
 }
 
 

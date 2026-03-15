@@ -11,7 +11,6 @@
 #include "stdint.h"
 #include "stm32f7xx.h"
 #include "gpio_drv.h"
-#include "rcc.h"
 
 #define UART_MODE_POS 2
 #define UART_RXNEIE_POS 4

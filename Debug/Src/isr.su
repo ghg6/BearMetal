@@ -1,0 +1,2 @@
+../Src/isr.c:12:6:TIM6_DAC_IRQHandler	8	static
+../Src/isr.c:20:6:tim6_led_callback	8	static

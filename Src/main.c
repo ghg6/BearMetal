@@ -17,26 +17,25 @@
  */
 
 #include <system.h>
-#include "bsp.h"
+#include "led_bsp.h"
 #include "uart_bsp.h"
-
-static void delay(volatile uint32_t n) { while (n--) __NOP(); }
+#include "global.h"
 
 int main(void)
 {
     system_init();
-    bsp_init();
+    led_bsp_init(&led_1);
 
     uart_bsp_init(&uart2_bsp);
 
     // Timer for LED toggle
-    uint32_t led_timer = 0;
+    //uint32_t led_timer = 0;
 
     while (1) {
         // Toggle LED every 1000 ms (1 second)
-        if (timer_elapsed(&led_timer, 1000)) {
-            bsp_led_toggle();
-        }
+//        if (timer_elapsed(&led_timer, 1000)) {
+//            bsp_led_toggle(&led_1);
+//        }
 
         // This will need to be handeld differently with RTOS
         kick_watchdog();

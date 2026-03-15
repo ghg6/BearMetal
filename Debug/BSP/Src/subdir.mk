@@ -5,14 +5,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../BSP/Src/led_bsp.c \
 ../BSP/Src/rcc_bsp.c \
 ../BSP/Src/uart_bsp.c 
 
 OBJS += \
+./BSP/Src/led_bsp.o \
 ./BSP/Src/rcc_bsp.o \
 ./BSP/Src/uart_bsp.o 
 
 C_DEPS += \
+./BSP/Src/led_bsp.d \
 ./BSP/Src/rcc_bsp.d \
 ./BSP/Src/uart_bsp.d 
 
@@ -24,7 +27,7 @@ BSP/Src/%.o BSP/Src/%.su BSP/Src/%.cyclo: ../BSP/Src/%.c BSP/Src/subdir.mk
 clean: clean-BSP-2f-Src
 
 clean-BSP-2f-Src:
-	-$(RM) ./BSP/Src/rcc_bsp.cyclo ./BSP/Src/rcc_bsp.d ./BSP/Src/rcc_bsp.o ./BSP/Src/rcc_bsp.su ./BSP/Src/uart_bsp.cyclo ./BSP/Src/uart_bsp.d ./BSP/Src/uart_bsp.o ./BSP/Src/uart_bsp.su
+	-$(RM) ./BSP/Src/led_bsp.cyclo ./BSP/Src/led_bsp.d ./BSP/Src/led_bsp.o ./BSP/Src/led_bsp.su ./BSP/Src/rcc_bsp.cyclo ./BSP/Src/rcc_bsp.d ./BSP/Src/rcc_bsp.o ./BSP/Src/rcc_bsp.su ./BSP/Src/uart_bsp.cyclo ./BSP/Src/uart_bsp.d ./BSP/Src/uart_bsp.o ./BSP/Src/uart_bsp.su
 
 .PHONY: clean-BSP-2f-Src
 

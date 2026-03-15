@@ -1,2 +1,0 @@
-../Src/bsp.c:15:6:bsp_init	1
-../Src/bsp.c:31:6:bsp_led_toggle	1

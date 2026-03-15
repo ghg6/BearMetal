@@ -1,0 +1,2 @@
+../BSP/Src/led_bsp.c:24:6:led_bsp_init	16	static,ignoring_inline_asm
+../BSP/Src/led_bsp.c:32:6:bsp_led_toggle	16	static

@@ -9,6 +9,7 @@
 
 static RCC_GPIO_RefCnt rcc_gpio_ref_cnt;
 static RCC_USART_RefCnt rcc_usart_ref_cnt;
+static RCC_TIM_RefCnt rcc_tim_ref_cnt;
 
 uint8_t ref_decrement_check_zero(uint8_t *cnt) {
 
@@ -152,6 +153,72 @@ void rcc_disable_usart(USART_TypeDef *USART) {
 		if (ref_decrement_check_zero(&rcc_usart_ref_cnt.usart2)) {
 			RCC->APB1ENR &= ~RCC_APB1ENR_USART2EN;
 			rcc_disable_gpio(GPIOD);
+		}
+	}
+}
+
+void rcc_enable_timer(TIM_TypeDef *timer) {
+
+	if (timer == TIM1) {
+	  RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
+	  rcc_tim_ref_cnt.tim1++;
+	} else if (timer == TIM2) {
+	  RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+	  rcc_tim_ref_cnt.tim2++;
+	} else if (timer == TIM3) {
+	  RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
+	  rcc_tim_ref_cnt.tim3++;
+	} else if (timer == TIM4) {
+	  RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;
+	  rcc_tim_ref_cnt.tim4++;
+	} else if (timer == TIM5) {
+	  RCC->APB1ENR |= RCC_APB1ENR_TIM5EN;
+	  rcc_tim_ref_cnt.tim5++;
+	} else if (timer == TIM6) {
+	  RCC->APB1ENR |= RCC_APB1ENR_TIM6EN;
+	  rcc_tim_ref_cnt.tim6++;
+	} else if (timer == TIM7) {
+	  RCC->APB1ENR |= RCC_APB1ENR_TIM7EN;
+	  rcc_tim_ref_cnt.tim7++;
+	} else if (timer == TIM8) {
+	  RCC->APB2ENR |= RCC_APB2ENR_TIM8EN;
+	  rcc_tim_ref_cnt.tim8++;
+	}
+}
+
+void rcc_disable_timer(TIM_TypeDef *timer) {
+
+	if (timer == TIM1) {
+		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim1)) {
+			RCC->APB2ENR &= ~RCC_APB2ENR_TIM1EN;
+		}
+	} else if (timer == TIM2) {
+		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim2)) {
+			RCC->APB1ENR &= ~RCC_APB1ENR_TIM2EN;
+		}
+	} else if (timer == TIM3) {
+		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim3)) {
+			RCC->APB1ENR &= ~RCC_APB1ENR_TIM3EN;
+		}
+	} else if (timer == TIM4) {
+		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim4)) {
+			RCC->APB1ENR &= ~RCC_APB1ENR_TIM4EN;
+		}
+	} else if (timer == TIM5) {
+		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim5)) {
+			RCC->APB1ENR &= ~RCC_APB1ENR_TIM5EN;
+		}
+	} else if (timer == TIM6) {
+		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim6)) {
+			RCC->APB1ENR &= ~RCC_APB1ENR_TIM6EN;
+		}
+	} else if (timer == TIM7) {
+		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim7)) {
+			RCC->APB1ENR &= ~RCC_APB1ENR_TIM7EN;
+		}
+	} else if (timer == TIM8) {
+		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim8)) {
+			RCC->APB2ENR &= ~RCC_APB2ENR_TIM8EN;
 		}
 	}
 }

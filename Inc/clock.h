@@ -8,9 +8,7 @@
 #ifndef CLOCK_H_
 #define CLOCK_H_
 
-#include <stdint.h>
-#include "stm32f7xx.h"
-#include "config.h"
+#include "global.h"
 
 void clock_init(void);
 void clock_set_frequency(uint32_t target_hz);

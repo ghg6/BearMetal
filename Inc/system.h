@@ -8,14 +8,14 @@
 #ifndef SYSTEM_H_
 #define SYSTEM_H_
 
+#include "global.h"
 #include <stdint.h>
 #include "stm32f7xx.h"
 #include "config.h"
-#include "rcc.h"
-#include "gpio.h"
 #include "clock.h"
-#include "timer.h"
 #include "watchdog.h"
+
+#include "timer_drv.h"
 
 void fpu_enable(void);
 

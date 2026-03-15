@@ -9,7 +9,7 @@
 
 // CMSIS global variable: core clock frequency
 // This is initialized to HSI default, then updated by clock_init()
-uint32_t SystemCoreClock = 16000000;
+uint32_t SystemCoreClock = HSI_FREQUENCY;
 
 void clock_init(void)
 {
@@ -64,7 +64,7 @@ void clock_init(void)
         ;
 
     // Update CMSIS SystemCoreClock variable
-    SystemCoreClock = 216000000;
+    SystemCoreClock = CPU_FREQUENCY;
 
     // Disable HSI as it's no longer needed (optional power saving)
     RCC->CR &= ~RCC_CR_HSION;

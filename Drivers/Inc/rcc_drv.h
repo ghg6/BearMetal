@@ -48,6 +48,17 @@ typedef struct {
 } RCC_USART_RefCnt;
 
 typedef struct {
+	uint8_t tim1;
+	uint8_t tim2;
+	uint8_t tim3;
+	uint8_t tim4;
+	uint8_t tim5;
+	uint8_t tim6;
+	uint8_t tim7;
+	uint8_t tim8;
+} RCC_TIM_RefCnt;
+
+typedef struct {
 
 } RCC_I2C_RefCnt;
 
@@ -59,11 +70,15 @@ typedef struct {
  * Function Prototypes
  */
 
-void rcc_enable_gpio(GPIO_TypeDef *gpio);
+extern void rcc_enable_gpio(GPIO_TypeDef *gpio);
 
 void rcc_disable_gpio(GPIO_TypeDef *gpio);
 
 void rcc_enable_usart(USART_TypeDef *USART);
+
+void rcc_enable_timer(TIM_TypeDef *timer);
+
+void rcc_disable_timer(TIM_TypeDef *timer);
 
 void rcc_enable_usart2();
 
