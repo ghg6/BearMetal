@@ -7,12 +7,14 @@ Src/clock.o: ../Src/clock.c ../Inc/clock.h ../Inc/global.h \
  ../Drivers/CMSIS/Include/cmsis_gcc.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h \
+ ../Drivers/CMSIS/Include/cmsis_gcc.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/rcc_drv.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/timer_drv.h \
  ../Inc/global.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/uart_drv.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h \
+ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/adc_drv.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/led_bsp.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/uart_bsp.h \
  ../Inc/isr.h ../Inc/config.h
@@ -26,12 +28,14 @@ Src/clock.o: ../Src/clock.c ../Inc/clock.h ../Inc/global.h \
 ../Drivers/CMSIS/Include/cmsis_gcc.h:
 ../Drivers/CMSIS/Include/mpu_armv7.h:
 ../Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h:
+../Drivers/CMSIS/Include/cmsis_gcc.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/rcc_drv.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/timer_drv.h:
 ../Inc/global.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/uart_drv.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h:
+C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/adc_drv.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/led_bsp.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/uart_bsp.h:
 ../Inc/isr.h:

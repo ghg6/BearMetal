@@ -13,12 +13,14 @@
 
 // CMSIS
 #include "stm32f7xx.h"
+#include <cmsis_gcc.h>
 
 // Drivers
 #include "gpio_drv.h"
 #include "rcc_drv.h"
 #include "timer_drv.h"
 #include "uart_drv.h"
+#include "adc_drv.h"
 
 // BSP
 #include "led_bsp.h"

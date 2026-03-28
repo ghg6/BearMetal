@@ -59,6 +59,12 @@ typedef struct {
 } RCC_TIM_RefCnt;
 
 typedef struct {
+	uint8_t adc1;
+	uint8_t adc2;
+	uint8_t adc3;
+} RCC_ADC_RefCnt;
+
+typedef struct {
 
 } RCC_I2C_RefCnt;
 
@@ -79,6 +85,10 @@ void rcc_enable_usart(USART_TypeDef *USART);
 void rcc_enable_timer(TIM_TypeDef *timer);
 
 void rcc_disable_timer(TIM_TypeDef *timer);
+
+void rcc_enable_adc(ADC_TypeDef *adc);
+
+void rcc_disable_adc(ADC_TypeDef *adc);
 
 void rcc_enable_usart2();
 

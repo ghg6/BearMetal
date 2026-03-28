@@ -1,7 +1,9 @@
-../Drivers/Src/rcc_drv.c:14:9:ref_decrement_check_zero	3
-../Drivers/Src/rcc_drv.c:27:6:rcc_enable_gpio	12
-../Drivers/Src/rcc_drv.c:80:6:rcc_disable_gpio	23
-../Drivers/Src/rcc_drv.c:139:6:rcc_enable_usart	2
-../Drivers/Src/rcc_drv.c:150:6:rcc_disable_usart	3
-../Drivers/Src/rcc_drv.c:160:6:rcc_enable_timer	9
-../Drivers/Src/rcc_drv.c:189:6:rcc_disable_timer	17
+../Drivers/Src/rcc_drv.c:15:9:ref_decrement_check_zero	3
+../Drivers/Src/rcc_drv.c:28:6:rcc_enable_gpio	12
+../Drivers/Src/rcc_drv.c:81:6:rcc_disable_gpio	23
+../Drivers/Src/rcc_drv.c:140:6:rcc_enable_usart	2
+../Drivers/Src/rcc_drv.c:151:6:rcc_disable_usart	3
+../Drivers/Src/rcc_drv.c:161:6:rcc_enable_timer	9
+../Drivers/Src/rcc_drv.c:199:6:rcc_disable_timer	17
+../Drivers/Src/rcc_drv.c:236:6:rcc_enable_adc	4
+../Drivers/Src/rcc_drv.c:253:6:rcc_disable_adc	7

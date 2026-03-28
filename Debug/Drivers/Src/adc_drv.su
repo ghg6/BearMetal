@@ -1,0 +1,5 @@
+../Drivers/Src/adc_drv.c:10:6:adc_common_init	16	static
+../Drivers/Src/adc_drv.c:15:6:adc_enable	24	static,ignoring_inline_asm
+../Drivers/Src/adc_drv.c:44:8:adc_disable	16	static
+../Drivers/Src/adc_drv.c:55:9:adc_channel_enable	32	static
+../Drivers/Src/adc_drv.c:90:6:adc_channel_disable	4	static

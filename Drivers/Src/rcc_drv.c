@@ -10,13 +10,14 @@
 static RCC_GPIO_RefCnt rcc_gpio_ref_cnt;
 static RCC_USART_RefCnt rcc_usart_ref_cnt;
 static RCC_TIM_RefCnt rcc_tim_ref_cnt;
+static RCC_ADC_RefCnt rcc_adc_ref_cnt;
 
 uint8_t ref_decrement_check_zero(uint8_t *cnt) {
 
 	// Helper function to reduce checking if decrement is zero
 
 	if (*cnt > 0) {
-		*cnt--;
+		(*cnt)--;
 	}
 	if (*cnt == 0) {
 		return(1);
@@ -162,28 +163,37 @@ void rcc_enable_timer(TIM_TypeDef *timer) {
 	if (timer == TIM1) {
 	  RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
 	  rcc_tim_ref_cnt.tim1++;
+	  (void)RCC->APB2ENR;
 	} else if (timer == TIM2) {
 	  RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
 	  rcc_tim_ref_cnt.tim2++;
+	  (void)RCC->APB1ENR;
 	} else if (timer == TIM3) {
 	  RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
 	  rcc_tim_ref_cnt.tim3++;
+	  (void)RCC->APB1ENR;
 	} else if (timer == TIM4) {
 	  RCC->APB1ENR |= RCC_APB1ENR_TIM4EN;
 	  rcc_tim_ref_cnt.tim4++;
+	  (void)RCC->APB1ENR;
 	} else if (timer == TIM5) {
 	  RCC->APB1ENR |= RCC_APB1ENR_TIM5EN;
 	  rcc_tim_ref_cnt.tim5++;
+	  (void)RCC->APB1ENR;
 	} else if (timer == TIM6) {
 	  RCC->APB1ENR |= RCC_APB1ENR_TIM6EN;
 	  rcc_tim_ref_cnt.tim6++;
+	  (void)RCC->APB1ENR;
 	} else if (timer == TIM7) {
 	  RCC->APB1ENR |= RCC_APB1ENR_TIM7EN;
 	  rcc_tim_ref_cnt.tim7++;
+	  (void)RCC->APB1ENR;
 	} else if (timer == TIM8) {
 	  RCC->APB2ENR |= RCC_APB2ENR_TIM8EN;
 	  rcc_tim_ref_cnt.tim8++;
+	  (void)RCC->APB2ENR;
 	}
+
 }
 
 void rcc_disable_timer(TIM_TypeDef *timer) {
@@ -219,6 +229,40 @@ void rcc_disable_timer(TIM_TypeDef *timer) {
 	} else if (timer == TIM8) {
 		if (ref_decrement_check_zero(&rcc_tim_ref_cnt.tim8)) {
 			RCC->APB2ENR &= ~RCC_APB2ENR_TIM8EN;
+		}
+	}
+}
+
+void rcc_enable_adc(ADC_TypeDef *adc)
+{
+	if (adc == ADC1) {
+		RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
+		rcc_adc_ref_cnt.adc1++;
+	} else if (adc == ADC2) {
+		RCC->APB2ENR |= RCC_APB2ENR_ADC2EN;
+		rcc_adc_ref_cnt.adc2++;
+	} else if (adc == ADC3) {
+		RCC->APB2ENR |= RCC_APB2ENR_ADC3EN;
+		rcc_adc_ref_cnt.adc3++;
+	} else return;
+
+	// Read-back to ensure the write completes before peripheral access
+	(void)RCC->APB2ENR;
+}
+
+void rcc_disable_adc(ADC_TypeDef *adc)
+{
+	if (adc == ADC1) {
+		if (ref_decrement_check_zero(&rcc_adc_ref_cnt.adc1)) {
+			RCC->APB2ENR &= ~RCC_APB2ENR_ADC1EN;
+		}
+	} else if (adc == ADC2) {
+		if (ref_decrement_check_zero(&rcc_adc_ref_cnt.adc2)) {
+			RCC->APB2ENR &= ~RCC_APB2ENR_ADC2EN;
+		}
+	} else if (adc == ADC3) {
+		if (ref_decrement_check_zero(&rcc_adc_ref_cnt.adc3)) {
+			RCC->APB2ENR &= ~RCC_APB2ENR_ADC3EN;
 		}
 	}
 }
