@@ -9,6 +9,7 @@
 #define DMA_DRV_H_
 
 #include "global.h"
+//#include "dma_config.h"
 
 //#define DMA1_BASE 			0x40026000
 
@@ -22,6 +23,11 @@
 #define DMA1_STREAM6_BASE 	0x40026088
 #define DMA1_STREAM7_BASE 	0x400260a0
 #define DMA1_STREAM8_BASE 	0x400260b8
+
+typedef enum {
+	DMA_ENABLED_ERROR,
+	DMA_ADDRESS_ERROR,
+} DMA_Error;
 
 typedef enum {
 	ONESHOT,
@@ -70,22 +76,25 @@ typedef struct {
 	uint32_t size;           // Number of items
 	uint8_t direction;       // P2M, M2P, M2M
 	uint8_t data_width;      // 8, 16, 32 bit
-	uint8_t circular;        // 1 for continuous
+	uint8_t transfer_mode;   // ONESHOT, CIRCULAR, DOUBLEBUF
 	uint8_t priority;
-} DMA_Stream_cfg;
+} DMA_StreamObj;
 
-typedef struct {
-	DMA_Stream_cfg *cfg;
-}DMA_StreamObj;
+//typedef struct {
+//	DMA_Stream_cfg *cfg;
+//}DMA_StreamObj;
 
 /*
  * Function Prototypes
  */
 
-int8_t dma_stream_init(DMA_StreamObj);
+int8_t dma_stream_init(DMA_StreamObj *stream_obj);
 int8_t dma_read(DMA_StreamObj *stream);
 int8_t dma_clear_flag(DMA_StreamObj *stream, DMA_Interrupt interrupt);
 
+#ifdef DMA1_STREAM0_EN
+DMA_StreamObj dma1_stream0;
+#endif /* DMA1_STREAM0_EN */
 
 
 #endif /* DMA_DRV_H_ */

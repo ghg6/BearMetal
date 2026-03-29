@@ -283,15 +283,15 @@ void rcc_enable_dma(DMA_TypeDef *dma)
 
 void rcc_disable_dma(DMA_TypeDef *dma)
 {
-    if (dma == DMA1) {
-            if (ref_decrement_check_zero(&rcc_dma_ref_cnt.dma1)) {
-                    RCC->AHB1ENR &= ~RCC_AHB1ENR_DMA1EN;
-            }
-    } else if (dma == DMA2) {
-            if (ref_decrement_check_zero(&rcc_dma_ref_cnt.dma2)) {
-                    RCC->AHB1ENR &= ~RCC_AHB1ENR_DMA2EN;
-            }
-    }
+	if (dma == DMA1) {
+		if (ref_decrement_check_zero(&rcc_dma_ref_cnt.dma1)) {
+				RCC->AHB1ENR &= ~RCC_AHB1ENR_DMA1EN;
+		}
+	} else if (dma == DMA2) {
+		if (ref_decrement_check_zero(&rcc_dma_ref_cnt.dma2)) {
+				RCC->AHB1ENR &= ~RCC_AHB1ENR_DMA2EN;
+		}
+	}
 }
 
 

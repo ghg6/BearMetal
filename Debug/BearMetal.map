@@ -199,10 +199,10 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Drivers/Src/adc_drv.o
  .debug_macro   0x00000000       0x10 ./Drivers/Src/adc_drv.o
  .debug_macro   0x00000000       0x40 ./Drivers/Src/adc_drv.o
- .debug_macro   0x00000000       0x3a ./Drivers/Src/adc_drv.o
+ .debug_macro   0x00000000       0x58 ./Drivers/Src/adc_drv.o
  .debug_macro   0x00000000       0x3a ./Drivers/Src/adc_drv.o
  .debug_line    0x00000000      0x8a5 ./Drivers/Src/adc_drv.o
- .debug_str     0x00000000    0xa3b85 ./Drivers/Src/adc_drv.o
+ .debug_str     0x00000000    0xa3c0a ./Drivers/Src/adc_drv.o
  .comment       0x00000000       0x44 ./Drivers/Src/adc_drv.o
  .debug_frame   0x00000000       0xc8 ./Drivers/Src/adc_drv.o
  .ARM.attributes
@@ -234,16 +234,18 @@ Discarded input sections
  .text          0x00000000        0x0 ./Drivers/Src/dma_drv.o
  .data          0x00000000        0x0 ./Drivers/Src/dma_drv.o
  .bss           0x00000000        0x0 ./Drivers/Src/dma_drv.o
+ .data.dma1_stream0
+                0x00000000       0x1c ./Drivers/Src/dma_drv.o
  .text._dma_isr_configure
                 0x00000000       0xb2 ./Drivers/Src/dma_drv.o
  .text.dma_stream_init
-                0x00000000       0xb6 ./Drivers/Src/dma_drv.o
+                0x00000000      0x112 ./Drivers/Src/dma_drv.o
  .text.dma_read
                 0x00000000       0x16 ./Drivers/Src/dma_drv.o
  .text.dma_clear_flag
-                0x00000000      0x100 ./Drivers/Src/dma_drv.o
- .debug_info    0x00000000      0x3b2 ./Drivers/Src/dma_drv.o
- .debug_abbrev  0x00000000      0x19a ./Drivers/Src/dma_drv.o
+                0x00000000       0xfc ./Drivers/Src/dma_drv.o
+ .debug_info    0x00000000      0x40f ./Drivers/Src/dma_drv.o
+ .debug_abbrev  0x00000000      0x1c3 ./Drivers/Src/dma_drv.o
  .debug_aranges
                 0x00000000       0x38 ./Drivers/Src/dma_drv.o
  .debug_rnglists
@@ -270,11 +272,11 @@ Discarded input sections
  .debug_macro   0x00000000       0x10 ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000       0x16 ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000       0x10 ./Drivers/Src/dma_drv.o
+ .debug_macro   0x00000000       0x58 ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000       0x3a ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000       0x3a ./Drivers/Src/dma_drv.o
- .debug_macro   0x00000000       0x3a ./Drivers/Src/dma_drv.o
- .debug_line    0x00000000      0x7ec ./Drivers/Src/dma_drv.o
- .debug_str     0x00000000    0xa3b8f ./Drivers/Src/dma_drv.o
+ .debug_line    0x00000000      0x820 ./Drivers/Src/dma_drv.o
+ .debug_str     0x00000000    0xa3c79 ./Drivers/Src/dma_drv.o
  .comment       0x00000000       0x44 ./Drivers/Src/dma_drv.o
  .debug_frame   0x00000000       0xac ./Drivers/Src/dma_drv.o
  .ARM.attributes
@@ -428,7 +430,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Drivers/Src/timer_drv.o
  .debug_macro   0x00000000       0x10 ./Drivers/Src/timer_drv.o
  .debug_macro   0x00000000       0x40 ./Drivers/Src/timer_drv.o
- .debug_macro   0x00000000       0x3a ./Drivers/Src/timer_drv.o
+ .debug_macro   0x00000000       0x58 ./Drivers/Src/timer_drv.o
  .debug_macro   0x00000000       0x3a ./Drivers/Src/timer_drv.o
  .group         0x00000000        0xc ./Drivers/Src/uart_drv.o
  .group         0x00000000        0xc ./Drivers/Src/uart_drv.o
@@ -522,7 +524,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Src/clock.o
  .debug_macro   0x00000000       0x10 ./Src/clock.o
  .debug_macro   0x00000000       0x40 ./Src/clock.o
- .debug_macro   0x00000000       0x3a ./Src/clock.o
+ .debug_macro   0x00000000       0x58 ./Src/clock.o
  .debug_macro   0x00000000       0x3a ./Src/clock.o
  .group         0x00000000        0xc ./Src/isr.o
  .group         0x00000000        0xc ./Src/isr.o
@@ -573,7 +575,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Src/isr.o
  .debug_macro   0x00000000       0x10 ./Src/isr.o
  .debug_macro   0x00000000       0x40 ./Src/isr.o
- .debug_macro   0x00000000       0x3a ./Src/isr.o
+ .debug_macro   0x00000000       0x58 ./Src/isr.o
  .debug_macro   0x00000000       0x3a ./Src/isr.o
  .group         0x00000000        0xc ./Src/main.o
  .group         0x00000000        0xc ./Src/main.o
@@ -624,7 +626,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Src/main.o
  .debug_macro   0x00000000       0x10 ./Src/main.o
  .debug_macro   0x00000000       0x40 ./Src/main.o
- .debug_macro   0x00000000       0x3a ./Src/main.o
+ .debug_macro   0x00000000       0x58 ./Src/main.o
  .debug_macro   0x00000000       0x3a ./Src/main.o
  .group         0x00000000        0xc ./Src/syscalls.o
  .group         0x00000000        0xc ./Src/syscalls.o
@@ -879,7 +881,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x16 ./Src/system.o
  .debug_macro   0x00000000       0x10 ./Src/system.o
  .debug_macro   0x00000000       0x40 ./Src/system.o
- .debug_macro   0x00000000       0x3a ./Src/system.o
+ .debug_macro   0x00000000       0x58 ./Src/system.o
  .debug_macro   0x00000000       0x3a ./Src/system.o
  .group         0x00000000        0xc ./Src/watchdog.o
  .group         0x00000000        0xc ./Src/watchdog.o
@@ -1754,7 +1756,7 @@ LOAD C:/ST/STM32CubeIDE_1.15.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x000045bd      0x546 ./Src/watchdog.o
  .debug_line    0x00004b03       0x7b ./Startup/startup_stm32f767zitx.o
 
-.debug_str      0x00000000    0xa4a88
+.debug_str      0x00000000    0xa4b0d
  .debug_str     0x00000000    0xa33a9 ./BSP/Src/led_bsp.o
                               0xa354b (size before relaxing)
  .debug_str     0x000a33a9      0x17d ./BSP/Src/uart_bsp.o
@@ -1763,21 +1765,21 @@ LOAD C:/ST/STM32CubeIDE_1.15.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                               0xa352a (size before relaxing)
  .debug_str     0x000a3590      0x3fb ./Drivers/Src/rcc_drv.o
                               0xa37b7 (size before relaxing)
- .debug_str     0x000a398b      0xe30 ./Drivers/Src/timer_drv.o
-                              0xa436e (size before relaxing)
- .debug_str     0x000a47bb       0x4b ./Drivers/Src/uart_drv.o
+ .debug_str     0x000a398b      0xeb5 ./Drivers/Src/timer_drv.o
+                              0xa43f3 (size before relaxing)
+ .debug_str     0x000a4840       0x4b ./Drivers/Src/uart_drv.o
                               0xa3439 (size before relaxing)
- .debug_str     0x000a4806       0x65 ./Src/clock.o
-                              0xa3b42 (size before relaxing)
- .debug_str     0x000a486b       0x3e ./Src/isr.o
-                              0xa3c2d (size before relaxing)
- .debug_str     0x000a48a9       0x45 ./Src/main.o
-                              0xa3c68 (size before relaxing)
- .debug_str     0x000a48ee      0x12d ./Src/system.o
-                              0xa3d63 (size before relaxing)
- .debug_str     0x000a4a1b       0x2e ./Src/watchdog.o
+ .debug_str     0x000a488b       0x65 ./Src/clock.o
+                              0xa3bc7 (size before relaxing)
+ .debug_str     0x000a48f0       0x3e ./Src/isr.o
+                              0xa3cb2 (size before relaxing)
+ .debug_str     0x000a492e       0x45 ./Src/main.o
+                              0xa3ced (size before relaxing)
+ .debug_str     0x000a4973      0x12d ./Src/system.o
+                              0xa3de8 (size before relaxing)
+ .debug_str     0x000a4aa0       0x2e ./Src/watchdog.o
                               0xa3428 (size before relaxing)
- .debug_str     0x000a4a49       0x3f ./Startup/startup_stm32f767zitx.o
+ .debug_str     0x000a4ace       0x3f ./Startup/startup_stm32f767zitx.o
                                  0x7c (size before relaxing)
 
 .comment        0x00000000       0x43
