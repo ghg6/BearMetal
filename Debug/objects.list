@@ -2,6 +2,7 @@
 "./BSP/Src/rcc_bsp.o"
 "./BSP/Src/uart_bsp.o"
 "./Drivers/Src/adc_drv.o"
+"./Drivers/Src/dma_drv.o"
 "./Drivers/Src/gpio_drv.o"
 "./Drivers/Src/rcc_drv.o"
 "./Drivers/Src/timer_drv.o"

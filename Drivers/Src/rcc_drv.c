@@ -11,6 +11,7 @@ static RCC_GPIO_RefCnt rcc_gpio_ref_cnt;
 static RCC_USART_RefCnt rcc_usart_ref_cnt;
 static RCC_TIM_RefCnt rcc_tim_ref_cnt;
 static RCC_ADC_RefCnt rcc_adc_ref_cnt;
+static RCC_DMA_RefCnt rcc_dma_ref_cnt;
 
 uint8_t ref_decrement_check_zero(uint8_t *cnt) {
 
@@ -265,6 +266,32 @@ void rcc_disable_adc(ADC_TypeDef *adc)
 			RCC->APB2ENR &= ~RCC_APB2ENR_ADC3EN;
 		}
 	}
+}
+
+void rcc_enable_dma(DMA_TypeDef *dma)
+{
+	if (dma == DMA1) {
+		RCC->AHB1ENR |= RCC_AHB1ENR_DMA1EN;
+		rcc_dma_ref_cnt.dma1++;
+		(void)RCC->AHB1ENR;  // Read-back
+	} else if (dma == DMA2) {
+		RCC->AHB1ENR |= RCC_AHB1ENR_DMA2EN;
+		rcc_dma_ref_cnt.dma2++;
+		(void)RCC->AHB1ENR;
+	}
+}
+
+void rcc_disable_dma(DMA_TypeDef *dma)
+{
+    if (dma == DMA1) {
+            if (ref_decrement_check_zero(&rcc_dma_ref_cnt.dma1)) {
+                    RCC->AHB1ENR &= ~RCC_AHB1ENR_DMA1EN;
+            }
+    } else if (dma == DMA2) {
+            if (ref_decrement_check_zero(&rcc_dma_ref_cnt.dma2)) {
+                    RCC->AHB1ENR &= ~RCC_AHB1ENR_DMA2EN;
+            }
+    }
 }
 
 

@@ -16,6 +16,8 @@ Drivers/Src/timer_drv.o: ../Drivers/Src/timer_drv.c \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/adc_drv.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/led_bsp.h \
  C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/uart_bsp.h \
+ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Config/Inc/dma_config.h \
+ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/dma_drv.h \
  ../Inc/isr.h ../Inc/global.h ../Inc/config.h
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/timer_drv.h:
 ../Inc/global.h:
@@ -35,6 +37,8 @@ C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/gpio_drv.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/adc_drv.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/led_bsp.h:
 C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/BSP/Inc/uart_bsp.h:
+C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Config/Inc/dma_config.h:
+C:/Users/ghrug/STM32CubeIDE/workspace_1.15.0/BearMetal/Drivers/Inc/dma_drv.h:
 ../Inc/isr.h:
 ../Inc/global.h:
 ../Inc/config.h:

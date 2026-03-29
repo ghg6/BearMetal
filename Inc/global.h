@@ -26,6 +26,8 @@
 #include "led_bsp.h"
 #include "uart_bsp.h"
 
+#include "dma_config.h"
+
 // App
 #include "isr.h"
 #include "config.h"
