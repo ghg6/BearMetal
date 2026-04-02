@@ -294,5 +294,13 @@ void rcc_disable_dma(DMA_TypeDef *dma)
 	}
 }
 
+int8_t rcc_spi_is_enabled(SPI_TypeDef *spi) {
+
+	return(0);
+}
+
+void rcc_enable_spi(SPI_TypeDef *spi) {
+
+}
 
 

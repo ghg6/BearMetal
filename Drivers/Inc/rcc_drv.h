@@ -95,6 +95,9 @@ void rcc_disable_adc(ADC_TypeDef *adc);
 void rcc_enable_dma(DMA_TypeDef *dma);
 void rcc_disable_dma(DMA_TypeDef *dma);
 
+int8_t rcc_spi_is_enabled(SPI_TypeDef *spi);
+void rcc_enable_spi(SPI_TypeDef *spi);
+
 
 void rcc_enable_usart2();
 

@@ -9,3 +9,5 @@
 ../Drivers/Src/rcc_drv.c:254:6:rcc_disable_adc	16	static
 ../Drivers/Src/rcc_drv.c:271:6:rcc_enable_dma	16	static
 ../Drivers/Src/rcc_drv.c:284:6:rcc_disable_dma	16	static
+../Drivers/Src/rcc_drv.c:297:8:rcc_spi_is_enabled	16	static
+../Drivers/Src/rcc_drv.c:302:6:rcc_enable_spi	16	static

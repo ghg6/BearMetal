@@ -8,6 +8,7 @@ C_SRCS += \
 ../Drivers/Src/adc_drv.c \
 ../Drivers/Src/dma_drv.c \
 ../Drivers/Src/gpio_drv.c \
+../Drivers/Src/i2s_drv.c \
 ../Drivers/Src/rcc_drv.c \
 ../Drivers/Src/timer_drv.c \
 ../Drivers/Src/uart_drv.c 
@@ -16,6 +17,7 @@ OBJS += \
 ./Drivers/Src/adc_drv.o \
 ./Drivers/Src/dma_drv.o \
 ./Drivers/Src/gpio_drv.o \
+./Drivers/Src/i2s_drv.o \
 ./Drivers/Src/rcc_drv.o \
 ./Drivers/Src/timer_drv.o \
 ./Drivers/Src/uart_drv.o 
@@ -24,6 +26,7 @@ C_DEPS += \
 ./Drivers/Src/adc_drv.d \
 ./Drivers/Src/dma_drv.d \
 ./Drivers/Src/gpio_drv.d \
+./Drivers/Src/i2s_drv.d \
 ./Drivers/Src/rcc_drv.d \
 ./Drivers/Src/timer_drv.d \
 ./Drivers/Src/uart_drv.d 
@@ -36,7 +39,7 @@ Drivers/Src/%.o Drivers/Src/%.su Drivers/Src/%.cyclo: ../Drivers/Src/%.c Drivers
 clean: clean-Drivers-2f-Src
 
 clean-Drivers-2f-Src:
-	-$(RM) ./Drivers/Src/adc_drv.cyclo ./Drivers/Src/adc_drv.d ./Drivers/Src/adc_drv.o ./Drivers/Src/adc_drv.su ./Drivers/Src/dma_drv.cyclo ./Drivers/Src/dma_drv.d ./Drivers/Src/dma_drv.o ./Drivers/Src/dma_drv.su ./Drivers/Src/gpio_drv.cyclo ./Drivers/Src/gpio_drv.d ./Drivers/Src/gpio_drv.o ./Drivers/Src/gpio_drv.su ./Drivers/Src/rcc_drv.cyclo ./Drivers/Src/rcc_drv.d ./Drivers/Src/rcc_drv.o ./Drivers/Src/rcc_drv.su ./Drivers/Src/timer_drv.cyclo ./Drivers/Src/timer_drv.d ./Drivers/Src/timer_drv.o ./Drivers/Src/timer_drv.su ./Drivers/Src/uart_drv.cyclo ./Drivers/Src/uart_drv.d ./Drivers/Src/uart_drv.o ./Drivers/Src/uart_drv.su
+	-$(RM) ./Drivers/Src/adc_drv.cyclo ./Drivers/Src/adc_drv.d ./Drivers/Src/adc_drv.o ./Drivers/Src/adc_drv.su ./Drivers/Src/dma_drv.cyclo ./Drivers/Src/dma_drv.d ./Drivers/Src/dma_drv.o ./Drivers/Src/dma_drv.su ./Drivers/Src/gpio_drv.cyclo ./Drivers/Src/gpio_drv.d ./Drivers/Src/gpio_drv.o ./Drivers/Src/gpio_drv.su ./Drivers/Src/i2s_drv.cyclo ./Drivers/Src/i2s_drv.d ./Drivers/Src/i2s_drv.o ./Drivers/Src/i2s_drv.su ./Drivers/Src/rcc_drv.cyclo ./Drivers/Src/rcc_drv.d ./Drivers/Src/rcc_drv.o ./Drivers/Src/rcc_drv.su ./Drivers/Src/timer_drv.cyclo ./Drivers/Src/timer_drv.d ./Drivers/Src/timer_drv.o ./Drivers/Src/timer_drv.su ./Drivers/Src/uart_drv.cyclo ./Drivers/Src/uart_drv.d ./Drivers/Src/uart_drv.o ./Drivers/Src/uart_drv.su
 
 .PHONY: clean-Drivers-2f-Src
 

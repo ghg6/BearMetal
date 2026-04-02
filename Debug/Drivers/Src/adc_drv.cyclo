@@ -1,5 +1,5 @@
 ../Drivers/Src/adc_drv.c:10:6:adc_common_init	1
 ../Drivers/Src/adc_drv.c:15:6:adc_enable	3
-../Drivers/Src/adc_drv.c:44:8:adc_disable	2
-../Drivers/Src/adc_drv.c:55:9:adc_channel_enable	8
-../Drivers/Src/adc_drv.c:90:6:adc_channel_disable	1
+../Drivers/Src/adc_drv.c:46:8:adc_disable	2
+../Drivers/Src/adc_drv.c:57:9:adc_channel_enable	8
+../Drivers/Src/adc_drv.c:92:6:adc_channel_disable	1

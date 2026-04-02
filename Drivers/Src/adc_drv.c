@@ -35,7 +35,9 @@ void adc_enable(ADC_State *state, ADC_cfg *cfg)
 
 	// Enable ADC
 	state->adc->CR2 |= (0b1 << 0);
-	(void)state->adc->CR2;          // Read back to verify write completes
+
+	// Read back to verify write completes
+	(void)state->adc->CR2;
 	for(int i=0; i<10; i++) __NOP();
 
 	state->F_init = 1;

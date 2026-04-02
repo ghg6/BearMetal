@@ -8,6 +8,7 @@ C_SRCS += \
 ../Src/clock.c \
 ../Src/isr.c \
 ../Src/main.c \
+../Src/spi_drv.c \
 ../Src/syscalls.c \
 ../Src/sysmem.c \
 ../Src/system.c \
@@ -17,6 +18,7 @@ OBJS += \
 ./Src/clock.o \
 ./Src/isr.o \
 ./Src/main.o \
+./Src/spi_drv.o \
 ./Src/syscalls.o \
 ./Src/sysmem.o \
 ./Src/system.o \
@@ -26,6 +28,7 @@ C_DEPS += \
 ./Src/clock.d \
 ./Src/isr.d \
 ./Src/main.d \
+./Src/spi_drv.d \
 ./Src/syscalls.d \
 ./Src/sysmem.d \
 ./Src/system.d \
@@ -39,7 +42,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/clock.cyclo ./Src/clock.d ./Src/clock.o ./Src/clock.su ./Src/isr.cyclo ./Src/isr.d ./Src/isr.o ./Src/isr.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/system.cyclo ./Src/system.d ./Src/system.o ./Src/system.su ./Src/watchdog.cyclo ./Src/watchdog.d ./Src/watchdog.o ./Src/watchdog.su
+	-$(RM) ./Src/clock.cyclo ./Src/clock.d ./Src/clock.o ./Src/clock.su ./Src/isr.cyclo ./Src/isr.d ./Src/isr.o ./Src/isr.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/spi_drv.cyclo ./Src/spi_drv.d ./Src/spi_drv.o ./Src/spi_drv.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/system.cyclo ./Src/system.d ./Src/system.o ./Src/system.su ./Src/watchdog.cyclo ./Src/watchdog.d ./Src/watchdog.o ./Src/watchdog.su
 
 .PHONY: clean-Src
 
