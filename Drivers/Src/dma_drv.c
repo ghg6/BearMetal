@@ -7,6 +7,13 @@
 
 #include "dma_drv.h"
 
+static const uint8_t dma_flag_bitpos[4] = { 0, 6, 16, 22 };
+
+void dma_low_level_init()
+{
+
+}
+
 int8_t _dma_isr_configure(DMA_StreamObj *stream_obj)
 {
 
@@ -14,8 +21,8 @@ int8_t _dma_isr_configure(DMA_StreamObj *stream_obj)
 
 	DMA_Stream_TypeDef *stream = stream_obj->stream;
 
-	if (stream_obj->interrupt_cfg.half_transfer == 1) stream->CR |= (0b1 << 3);
 	if (stream_obj->interrupt_cfg.transfer_complete == 1) stream->CR |= (0b1 << 4);
+	if (stream_obj->interrupt_cfg.half_transfer == 1) stream->CR |= (0b1 << 3);
 	if (stream_obj->interrupt_cfg.transfer_error == 1) stream->CR |= (0b1 << 2);
 	if (stream_obj->interrupt_cfg.direct_mode_error == 1) stream->CR |= (0b1 << 1);
 	if (stream_obj->interrupt_cfg.fifo_error == 1) stream->FCR |= (0b1 << 7);
@@ -27,10 +34,13 @@ int8_t dma_stream_init(DMA_StreamObj *stream_obj)
 {
 	//DMA_Stream_cfg *cfg = stream_obj;
 	DMA_Stream_TypeDef *stream = stream_obj->stream;
+	uint32_t offset;
 
 	// Ensure stream is disabled before configuring
 	if (stream->CR & 0x1) return(DMA_ENABLED_ERROR);
-	if ((stream_obj->dst_addr == 0x0 || stream_obj->dst_addr == 0x0)) return(DMA_ADDRESS_ERROR);
+	if ((stream_obj->dst_addr == 0x0 || stream_obj->src_addr == 0x0)) return(DMA_ADDRESS_ERROR);
+	if (stream_obj->size == 0) return(DMA_SIZE_ERROR);
+	if (stream_obj->fifo_threshold > 3) return(DMA_FIFO_CONFIG_ERROR);
 
 	rcc_enable_dma(stream_obj->dma);
 
@@ -69,16 +79,37 @@ int8_t dma_stream_init(DMA_StreamObj *stream_obj)
 	if (stream_obj->transfer_mode == DOUBLEBUF) {
 		cr |= (1 << 18);
 		cr |= (1 << 8);
+		stream->M1AR = stream_obj->dst_addr_dbuf;
 	}
 
 	// Memory increment (bit 10) - always enable for buffers
 	if (stream_obj->direction == M2P) {
-		cr |= (1 << 9);
-	}
-	else {
 		cr |= (1 << 10);
 	}
+	else {
+		cr |= (1 << 9);
+	}
 
+	// Init stored values for performance
+	if (stream_obj->dma == DMA1) {
+	    offset = ((uint32_t)stream_obj->stream - DMA1_STREAM0_BASE) / 0x14;
+	} else {
+	    offset = ((uint32_t)stream_obj->stream - DMA2_STREAM0_BASE) / 0x14;
+	}
+
+	if (offset < 4) {
+	    stream_obj->isr_reg  = &stream_obj->dma->LISR;
+	    stream_obj->ifcr_reg = &stream_obj->dma->LIFCR;
+	    stream_obj->flag_offset = dma_flag_bitpos[offset % 4];  // 5 flag bits per stream in LO register
+	} else {
+	    stream_obj->isr_reg  = &stream_obj->dma->HISR;
+	    stream_obj->ifcr_reg = &stream_obj->dma->HIFCR;
+	    stream_obj->flag_offset = dma_flag_bitpos[(offset-4) % 4];
+	}
+
+	if (stream_obj->fifo == 1) {
+		stream->FCR |= (1 << 2) | (stream_obj->fifo_threshold << 0);
+	}
 
 	// Write CR (EN bit 0 not set yet)
 	stream->CR = cr;
@@ -88,45 +119,6 @@ int8_t dma_stream_init(DMA_StreamObj *stream_obj)
 
 	// Enable the stream (bit 0)
 	stream->CR |= 1;
-
-	return(1);
-}
-
-int8_t dma_read(DMA_StreamObj *stream)
-{
-
-	return(1);
-}
-
-int8_t dma_clear_flag(DMA_StreamObj *stream_obj, DMA_Interrupt interrupt_pos)
-{
-
-	/*
-	 * Takes the DMA Stream Object and the Interrupt Flag to be cleared
-	 *
-	 */
-
-	DMA_TypeDef *dma = stream_obj->dma;
-	DMA_Stream_TypeDef *stream = stream_obj->stream;
-
-	uint32_t offset;
-
-	if (dma == DMA1) {
-		offset = ((uint32_t)&stream->CR - DMA1_STREAM0_BASE)/(0x14);
-		if (offset < 4) {
-			  dma->LIFCR |= (0b1 << (offset * 5 + interrupt_pos));  // Streams 0-3
-		} else {
-			  dma->HIFCR |= (0b1 << ((offset - 4) * 5 + interrupt_pos));  // Streams 4-7
-		}
-	}
-	if (dma == DMA2) {
-		offset = ((uint32_t)&stream->CR - DMA2_STREAM0_BASE)/(0x14);
-		if (offset < 4) {
-			  dma->LIFCR |= (0b1 << (offset * 5 + interrupt_pos));  // Streams 0-3
-		} else {
-			  dma->HIFCR |= (0b1 << ((offset - 4) * 5 + interrupt_pos));  // Streams 4-7
-		}
-	}
 
 	return(1);
 }

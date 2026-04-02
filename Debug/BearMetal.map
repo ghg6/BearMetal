@@ -235,21 +235,21 @@ Discarded input sections
  .data          0x00000000        0x0 ./Drivers/Src/dma_drv.o
  .bss           0x00000000        0x0 ./Drivers/Src/dma_drv.o
  .data.dma1_stream0
-                0x00000000       0x1c ./Drivers/Src/dma_drv.o
+                0x00000000       0x30 ./Drivers/Src/dma_drv.o
+ .rodata.dma_flag_bitpos
+                0x00000000        0x4 ./Drivers/Src/dma_drv.o
+ .text.dma_low_level_init
+                0x00000000        0xe ./Drivers/Src/dma_drv.o
  .text._dma_isr_configure
                 0x00000000       0xb2 ./Drivers/Src/dma_drv.o
  .text.dma_stream_init
-                0x00000000      0x112 ./Drivers/Src/dma_drv.o
- .text.dma_read
-                0x00000000       0x16 ./Drivers/Src/dma_drv.o
- .text.dma_clear_flag
-                0x00000000       0xfc ./Drivers/Src/dma_drv.o
- .debug_info    0x00000000      0x40f ./Drivers/Src/dma_drv.o
- .debug_abbrev  0x00000000      0x1c3 ./Drivers/Src/dma_drv.o
+                0x00000000      0x1f0 ./Drivers/Src/dma_drv.o
+ .debug_info    0x00000000      0x408 ./Drivers/Src/dma_drv.o
+ .debug_abbrev  0x00000000      0x1d7 ./Drivers/Src/dma_drv.o
  .debug_aranges
-                0x00000000       0x38 ./Drivers/Src/dma_drv.o
+                0x00000000       0x30 ./Drivers/Src/dma_drv.o
  .debug_rnglists
-                0x00000000       0x28 ./Drivers/Src/dma_drv.o
+                0x00000000       0x21 ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000      0x167 ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000      0xade ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000      0x189 ./Drivers/Src/dma_drv.o
@@ -275,10 +275,10 @@ Discarded input sections
  .debug_macro   0x00000000       0x58 ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000       0x3a ./Drivers/Src/dma_drv.o
  .debug_macro   0x00000000       0x3a ./Drivers/Src/dma_drv.o
- .debug_line    0x00000000      0x820 ./Drivers/Src/dma_drv.o
- .debug_str     0x00000000    0xa3c79 ./Drivers/Src/dma_drv.o
+ .debug_line    0x00000000      0x82a ./Drivers/Src/dma_drv.o
+ .debug_str     0x00000000    0xa3cba ./Drivers/Src/dma_drv.o
  .comment       0x00000000       0x44 ./Drivers/Src/dma_drv.o
- .debug_frame   0x00000000       0xac ./Drivers/Src/dma_drv.o
+ .debug_frame   0x00000000       0x7c ./Drivers/Src/dma_drv.o
  .ARM.attributes
                 0x00000000       0x32 ./Drivers/Src/dma_drv.o
  .group         0x00000000        0xc ./Drivers/Src/gpio_drv.o
