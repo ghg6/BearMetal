@@ -1,7 +1,7 @@
-../Drivers/Src/gpio_drv.c:10:20:set_2bit_field	32	static
-../Drivers/Src/gpio_drv.c:16:20:set_1bit_field	24	static
-../Drivers/Src/gpio_drv.c:21:20:set_4bit_af	32	static
-../Drivers/Src/gpio_drv.c:28:6:gpio_config	24	static
+../Drivers/Src/gpio_drv.c:11:20:set_2bit_field	32	static
+../Drivers/Src/gpio_drv.c:17:20:set_1bit_field	24	static
+../Drivers/Src/gpio_drv.c:22:20:set_4bit_af	32	static
+../Drivers/Src/gpio_drv.c:29:6:gpio_config	24	static
 ../Drivers/Src/gpio_drv.c:51:6:gpio_write	24	static
 ../Drivers/Src/gpio_drv.c:57:6:gpio_toggle	24	static
 ../Drivers/Src/gpio_drv.c:64:9:gpio_read	16	static

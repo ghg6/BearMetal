@@ -6,6 +6,7 @@
  */
 
 #include "../Inc/gpio_drv.h"
+#include "rcc_drv.h"
 
 static inline void set_2bit_field(volatile uint32_t *reg, uint32_t pin, uint32_t val)
 {
@@ -27,8 +28,7 @@ static inline void set_4bit_af(GPIO_TypeDef *gpio, uint32_t pin, uint32_t af)
 
 void gpio_config(GPIO_TypeDef *gpio, uint32_t pin, const gpio_pin_cfg_t *cfg)
 {
-	//rcc_enable_gpio(cfg->bus);
-	//__NOP();
+    rcc_enable_gpio(gpio);
 
     // Mode
     set_2bit_field(&gpio->MODER, pin, (uint32_t)cfg->mode);

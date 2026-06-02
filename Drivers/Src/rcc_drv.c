@@ -142,10 +142,8 @@ void rcc_enable_usart(USART_TypeDef *USART)
 {
 	if (USART == USART2)
 	{
-		// Enable USART2 clock and GPIO
 		RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
 		rcc_usart_ref_cnt.usart2++;
-		rcc_enable_gpio(GPIOD);
 	}
 }
 
@@ -154,7 +152,6 @@ void rcc_disable_usart(USART_TypeDef *USART) {
 	{
 		if (ref_decrement_check_zero(&rcc_usart_ref_cnt.usart2)) {
 			RCC->APB1ENR &= ~RCC_APB1ENR_USART2EN;
-			rcc_disable_gpio(GPIOD);
 		}
 	}
 }

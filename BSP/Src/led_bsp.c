@@ -23,9 +23,6 @@ LED_cfg led_1 = {
 
 void led_bsp_init(LED_cfg *cfg)
 {
-    rcc_enable_gpio(cfg->bus);
-    __NOP();
-
     gpio_config(cfg->bus, cfg->pin, &cfg->config);
 }
 
