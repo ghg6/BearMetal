@@ -12,6 +12,7 @@
 #include "uart_drv.h"
 #include "gpio_drv.h"
 #include "rcc_drv.h"
+#include "global.h"
 
 #define ENABLE_UART2
 

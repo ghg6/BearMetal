@@ -1,4 +1,11 @@
-../Drivers/Src/uart_drv.c:10:6:calc_baud_rate	16	static
-../Drivers/Src/uart_drv.c:15:6:kick_tx	16	static
-../Drivers/Src/uart_drv.c:22:6:kick_rx	16	static
-../Drivers/Src/uart_drv.c:28:6:uart_init	24	static
+../Drivers/CMSIS/Include/core_cm7.h:1896:22:__NVIC_EnableIRQ	16	static
+../Drivers/CMSIS/Include/core_cm7.h:2024:22:__NVIC_SetPriority	16	static
+../Drivers/Src/uart_drv.c:15:17:calc_baud_rate	16	static
+../Drivers/Src/uart_drv.c:20:17:usart_pclk	16	static
+../Drivers/Src/uart_drv.c:28:13:kick_tx	16	static
+../Drivers/Src/uart_drv.c:35:13:kick_rx	16	static
+../Drivers/Src/uart_drv.c:41:18:usart_irqn	16	static
+../Drivers/Src/uart_drv.c:50:6:uart_init	24	static
+../Drivers/Src/uart_drv.c:80:9:uart_read	24	static
+../Drivers/Src/uart_drv.c:88:6:uart_send	24	static
+../Drivers/Src/uart_drv.c:97:6:uart_handle_isr	24	static

@@ -23,4 +23,7 @@ void tim6_led_callback(void)
     counter_1s++;
 }
 
-
+void USART2_IRQHandler(void)
+{
+    uart_handle_isr(&uart2_bsp.usart);
+}
