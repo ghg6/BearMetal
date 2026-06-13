@@ -14,8 +14,8 @@
 // Define core board requirements
 #define HSI_FREQUENCY (16*1000000) // 16Mhz
 #define CPU_FREQUENCY (216*1000000) // 216Mhz
-#define APB1_FREQUENCY (108*1000000)
-#define APB2_FREQUENCY (54*1000000)
+#define APB1_FREQUENCY (54*1000000)
+#define APB2_FREQUENCY (108*1000000)
 
 // Define custom configurations
 //#define TICK_FREQUENCY 1000 // 1ms

@@ -85,13 +85,14 @@ int16_t uart_read(UsartConfig *cfg)
     return byte;
 }
 
-void uart_send(UsartConfig *cfg, uint8_t byte)
+int8_t uart_send(UsartConfig *cfg, uint8_t byte)
 {
     uint16_t next = (cfg->tx_head + 1) % cfg->tx_buf_size;
-    while (next == cfg->tx_tail);           // block if TX buffer full
+    if (next == cfg->tx_tail) return -1;    // TX buffer full, drop byte
     cfg->tx_buf[cfg->tx_head] = byte;
     cfg->tx_head = next;
     cfg->usart->CR1 |= USART_CR1_TXEIE;    // kick off ISR-driven TX
+    return 0;
 }
 
 void uart_handle_isr(UsartConfig *cfg)

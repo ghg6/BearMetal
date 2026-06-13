@@ -43,6 +43,7 @@ extern tim_callback_t tim6_callback;
 extern tim_callback_t tim7_callback;
 
 extern TimerCFG timer6;
+extern TimerCFG timer7;
 
 int8_t timer_interrupt_handle(TIM_TypeDef *timer);
 void timer_init(TIM_TypeDef *timer, TimerCFG *timer_cfg, tim_callback_t callback);

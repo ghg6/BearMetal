@@ -14,6 +14,7 @@
 #include "config.h"
 #include "clock.h"
 #include "watchdog.h"
+#include "isr.h"
 
 #include "timer_drv.h"
 

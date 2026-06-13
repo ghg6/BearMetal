@@ -12,8 +12,9 @@
 
 
 void tim6_led_callback(void);
+void tim7_tick_callback(void);
 
-// Add counters
 extern volatile uint32_t counter_1s;
+extern volatile uint32_t millis;
 
 #endif /* ISR_H_ */

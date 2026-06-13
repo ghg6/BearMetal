@@ -52,7 +52,7 @@ int16_t uart_read(UsartConfig *cfg);
 
 void uart_handle_isr(UsartConfig *cfg);
 
-void uart_send(UsartConfig *cfg, uint8_t byte);
+int8_t uart_send(UsartConfig *cfg, uint8_t byte);
 
 
 #endif /* UART_DRV_H_ */

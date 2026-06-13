@@ -7,5 +7,5 @@
 ../Drivers/Src/uart_drv.c:41:18:usart_irqn	16	static
 ../Drivers/Src/uart_drv.c:50:6:uart_init	24	static
 ../Drivers/Src/uart_drv.c:80:9:uart_read	24	static
-../Drivers/Src/uart_drv.c:88:6:uart_send	24	static
-../Drivers/Src/uart_drv.c:97:6:uart_handle_isr	24	static
+../Drivers/Src/uart_drv.c:88:8:uart_send	24	static
+../Drivers/Src/uart_drv.c:98:6:uart_handle_isr	24	static

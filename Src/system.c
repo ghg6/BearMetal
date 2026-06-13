@@ -114,6 +114,7 @@ void system_init(void)
 	#endif
 
     timer_init(TIM6, &timer6, tim6_led_callback);
+    timer_init(TIM7, &timer7, tim7_tick_callback);
 }
 
 

@@ -12,6 +12,11 @@ TimerCFG timer6 = {
 	.period =  10000,     // 10 kHz / 10000 = 1 Hz
 };
 
+TimerCFG timer7 = {
+	.prescaler = 10799,   // 108 MHz / 108 = 10 kHz
+	.period = 10,         // 10 kHz / 10 = 1 kHz (1ms)
+};
+
 tim_callback_t tim2_callback = NULL;
 tim_callback_t tim3_callback = NULL;
 tim_callback_t tim4_callback = NULL;

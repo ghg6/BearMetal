@@ -18,8 +18,6 @@ void uart_bsp_init(uart_bsp_cfg_t *cfg) {
     uart_init(&cfg->usart);
 }
 
-//int8_t uart_send()
-
 // Define USART2
 #ifdef ENABLE_UART2
 
@@ -30,37 +28,32 @@ const gpio_pin_cfg_t uart2_gpio_cfg = {
 	.mode = GPIO_MODE_AF,
 	.otype = GPIO_OTYPE_PUSHPULL,
 	.speed = GPIO_SPEED_HIGH,
-	.pupd = GPIO_PUPD_NONE,
+	.pupd = GPIO_PUPD_DOWN,
 	.af = 7
 };
 
-const UsartConfig uart2_cfg = {
-	.usart = USART2,
-	.baud_rate = 115200,
-	.mode = RXTX,
-	.rx_buf = uart2_rx_buf,
-	.rx_buf_size = UART2_RX_BUF_SIZE,
-	.tx_buf = uart2_tx_buf,
-	.tx_buf_size = UART2_TX_BUF_SIZE
-};
-
 uart_bsp_cfg_t uart2_bsp = {
-	.usart = uart2_cfg,
+	.usart = {
+		.usart = USART2,
+		.baud_rate = 115200,
+		.mode = RXTX,
+		.irq_priority = 5,
+		.rx_buf = uart2_rx_buf,
+		.rx_buf_size = UART2_RX_BUF_SIZE,
+		.rx_head = 0,
+		.rx_tail = 0,
+		.tx_buf = uart2_tx_buf,
+		.tx_buf_size = UART2_TX_BUF_SIZE,
+		.tx_head = 0,
+		.tx_tail = 0
+	},
 	.pins =  {
 		.port = GPIOD,
-		.tx_pin = 5,
-		.rx_pin = 6,
+		.tx_pin = 8,
+		.rx_pin = 9,
 		.pin_cfg = uart2_gpio_cfg
 	}
-
 };
 
 #endif
-
-
-//UsartObject usart2 = {
-//
-//};
-
-
 
