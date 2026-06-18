@@ -1,0 +1,6 @@
+../Src/uart_app.c:13:6:uart_app_send_buf	3
+../Src/uart_app.c:22:6:uart_app_send_string	1
+../Src/uart_app.c:27:6:uart_app_printf	3
+../Src/uart_app.c:43:10:uart_app_available	1
+../Src/uart_app.c:49:9:uart_app_read_line	6
+../Src/uart_app.c:76:6:uart_app_run	2

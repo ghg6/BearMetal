@@ -15,7 +15,7 @@
 #include "config.h"
 
 #define UART_MODE_POS 2
-#define UART_RXNEIE_POS 4
+#define UART_RXNEIE_POS 5   // USART_CR1: RXNEIE is bit 5 (bit 4 is IDLEIE)
 
 typedef enum {
 	OFF,

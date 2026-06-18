@@ -31,6 +31,7 @@
 // App
 #include "isr.h"
 #include "config.h"
+#include "uart_app.h"
 
 
 #endif /* GLOBAL_H_ */

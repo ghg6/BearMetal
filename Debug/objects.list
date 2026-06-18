@@ -14,5 +14,6 @@
 "./Src/syscalls.o"
 "./Src/sysmem.o"
 "./Src/system.o"
+"./Src/uart_app.o"
 "./Src/watchdog.o"
 "./Startup/startup_stm32f767zitx.o"

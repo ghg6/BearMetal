@@ -7,11 +7,6 @@
 
 #include "isr.h"
 
-#define DEBOUNCE_USART_MS 20
-
-volatile uint32_t counter_1s = 0;
-volatile uint32_t millis = 0;
-
 /*******************************
  * Timer ISR
  *
@@ -26,7 +21,7 @@ void TIM6_DAC_IRQHandler(void)
 
 void tim6_led_callback(void)
 {
-    bsp_led_toggle(&led_1);
+
     counter_1s++;
 }
 
@@ -47,14 +42,7 @@ void tim7_tick_callback(void)
  *
  */
 
-void USART2_IRQHandler(void)
+void USART3_IRQHandler(void)
 {
-	// This ISR handles the TX/RX of the USART peripheral
-	// The debounce is needed in case noisy pin values
-	// constantly trigger the ISR
-	static uint32_t last_call = 0;
-	if (millis - last_call > DEBOUNCE_USART_MS) {
-		uart_handle_isr(&uart2_bsp.usart);
-		last_call = millis;
-	}
+	uart_handle_isr(&uart2_bsp.usart);
 }

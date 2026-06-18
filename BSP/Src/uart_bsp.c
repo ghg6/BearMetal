@@ -34,7 +34,7 @@ const gpio_pin_cfg_t uart2_gpio_cfg = {
 
 uart_bsp_cfg_t uart2_bsp = {
 	.usart = {
-		.usart = USART2,
+		.usart = USART3,
 		.baud_rate = 115200,
 		.mode = RXTX,
 		.irq_priority = 5,

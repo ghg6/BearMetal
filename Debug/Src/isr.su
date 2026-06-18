@@ -1,5 +1,5 @@
 ../Src/isr.c:15:6:TIM6_DAC_IRQHandler	8	static
-../Src/isr.c:22:6:TIM7_IRQHandler	8	static
-../Src/isr.c:29:6:tim6_led_callback	8	static
+../Src/isr.c:22:6:tim6_led_callback	4	static
+../Src/isr.c:28:6:TIM7_IRQHandler	8	static
 ../Src/isr.c:35:6:tim7_tick_callback	4	static
-../Src/isr.c:40:6:USART2_IRQHandler	8	static
+../Src/isr.c:45:6:USART3_IRQHandler	8	static

@@ -99,6 +99,14 @@ void uart_handle_isr(UsartConfig *cfg)
 {
   uint32_t isr = cfg->usart->ISR;
 
+  // On STM32F7, ORE/FE/NE/PE are cleared via ICR, NOT by reading RDR.
+  // With RXNEIE set, an uncleared ORE re-triggers this IRQ forever and
+  // starves the main loop (watchdog reset). Clear errors up front.
+  if (isr & (USART_ISR_ORE | USART_ISR_FE | USART_ISR_NE | USART_ISR_PE)) {
+      cfg->usart->ICR = USART_ICR_ORECF | USART_ICR_FECF
+                      | USART_ICR_NCF   | USART_ICR_PECF;
+  }
+
   if (isr & USART_ISR_RXNE) {
 	  uint8_t byte;
 	  kick_rx(cfg->usart, &byte);

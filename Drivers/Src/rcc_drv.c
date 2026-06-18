@@ -145,6 +145,14 @@ void rcc_enable_usart(USART_TypeDef *USART)
 		RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
 		rcc_usart_ref_cnt.usart2++;
 	}
+	else if (USART == USART3)
+	{
+		RCC->APB1ENR |= RCC_APB1ENR_USART3EN;
+		rcc_usart_ref_cnt.usart3++;
+	}
+
+	// Read-back to ensure the write completes before peripheral access
+	(void)RCC->APB1ENR;
 }
 
 void rcc_disable_usart(USART_TypeDef *USART) {
@@ -152,6 +160,12 @@ void rcc_disable_usart(USART_TypeDef *USART) {
 	{
 		if (ref_decrement_check_zero(&rcc_usart_ref_cnt.usart2)) {
 			RCC->APB1ENR &= ~RCC_APB1ENR_USART2EN;
+		}
+	}
+	else if (USART == USART3)
+	{
+		if (ref_decrement_check_zero(&rcc_usart_ref_cnt.usart3)) {
+			RCC->APB1ENR &= ~RCC_APB1ENR_USART3EN;
 		}
 	}
 }

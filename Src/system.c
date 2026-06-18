@@ -6,6 +6,9 @@
  */
 #include <system.h>
 
+volatile uint32_t counter_1s = 0;
+volatile uint32_t millis = 0;
+
 void fpu_enable(void)
 {
     // Enable CP10 and CP11 full access (Cortex-M7 FPU)
@@ -84,12 +87,17 @@ void power_init(void)
 
 void HardFault_Handler(void)
 {
-    // Log error, reset, or halt gracefully
+    // Halt here so faults are catchable in the debugger instead of
+    // looping invisibly until the watchdog resets the chip.
+    __asm volatile ("bkpt #0");
+    while (1) { }
 }
 
 void MemManage_Handler(void)
 {
     // Handle MPU violations
+    __asm volatile ("bkpt #0");
+    while (1) { }
 }
 
 void system_init(void)
