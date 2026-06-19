@@ -41,6 +41,13 @@ typedef struct {
     uint16_t tx_buf_size;
     volatile uint16_t tx_head;   // written by application
     volatile uint16_t tx_tail;   // read by ISR
+
+    // Error counters
+    volatile uint32_t ore_count;
+    volatile uint32_t fe_count;
+    volatile uint32_t ne_count;
+    volatile uint32_t pe_count;
+    volatile uint32_t rx_overflow_count;
 } UsartConfig;
 
 
@@ -52,7 +59,7 @@ int16_t uart_read(UsartConfig *cfg);
 
 void uart_handle_isr(UsartConfig *cfg);
 
-int8_t uart_send(UsartConfig *cfg, uint8_t byte);
+int8_t uart_send_byte(UsartConfig *cfg, uint8_t byte);
 
 
 #endif /* UART_DRV_H_ */

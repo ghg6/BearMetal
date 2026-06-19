@@ -19,6 +19,6 @@ void     uart_app_send_buf(uart_bsp_cfg_t *cfg, const uint8_t *buf, uint16_t len
 void     uart_app_printf(uart_bsp_cfg_t *cfg, const char *fmt, ...);
 uint16_t uart_app_available(uart_bsp_cfg_t *cfg);
 int16_t  uart_app_read_line(uart_bsp_cfg_t *cfg, char *buf, uint16_t max_len);
-void     uart_app_run(uart_bsp_cfg_t *cfg);
+void     uart_app_service(void);
 
 #endif /* UART_APP_H_ */

@@ -29,30 +29,19 @@ int main(void)
 {
     system_init();
     led_bsp_init(&led_1);
-    uart_bsp_init(&uart2_bsp);
-
-    // Direct test - bypass printf
-    uart_send(&uart2_bsp.usart, 'A');
-    uart_send(&uart2_bsp.usart, 'B');
-    uart_send(&uart2_bsp.usart, 'C');
-    uart_send(&uart2_bsp.usart, '\r');
-    uart_send(&uart2_bsp.usart, '\n');
-
-    uart_app_printf(&uart2_bsp, "BearMetal ready\r\n");
-
-    static char line_buf[LINE_BUF_LEN];
+    uart_bsp_init(&uart3_bsp);
 
     while (1) {
-        kick_watchdog();
+        system_service();
 
-        uart_app_run(&uart2_bsp);
 
-        int16_t n = uart_app_read_line(&uart2_bsp, line_buf, LINE_BUF_LEN);
-        if (n >= 0) {
-            uart_app_send_string(&uart2_bsp, "echo: ");
-            uart_app_send_string(&uart2_bsp, line_buf);
-            uart_app_send_string(&uart2_bsp, "\r\n");
-        }
+        static uint32_t last_counter = 0;
+    	if (counter_1s != last_counter) {
+    		bsp_led_toggle(&led_1);
+    		uart_app_printf(&uart3_bsp, "counter: %lu\r\n", counter_1s);
+    		last_counter = counter_1s;
+    	}
+
     }
 }
 

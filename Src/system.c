@@ -127,5 +127,11 @@ void system_init(void)
     timer_init(TIM7, &timer7, tim7_tick_callback);
 }
 
+void system_service(void) {
+	// To hold functions such as ki
+	kick_watchdog();
+	uart_app_service();
+}
+
 
 

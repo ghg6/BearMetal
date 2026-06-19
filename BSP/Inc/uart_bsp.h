@@ -13,7 +13,7 @@
 #include "gpio_drv.h"
 #include "rcc_drv.h"
 
-#define ENABLE_UART2
+#define ENABLE_UART3
 
 typedef struct {
 	GPIO_TypeDef *port;
@@ -27,7 +27,7 @@ typedef struct {
     uart_pins_cfg_t pins;
 } uart_bsp_cfg_t;
 
-extern uart_bsp_cfg_t uart2_bsp;
+extern uart_bsp_cfg_t uart3_bsp;
 
 void uart_bsp_init(uart_bsp_cfg_t *cfg);
 

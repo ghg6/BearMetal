@@ -44,7 +44,7 @@ static IRQn_Type usart_irqn(USART_TypeDef *usart)
     if (usart == USART2) return USART2_IRQn;
     if (usart == USART3) return USART3_IRQn;
     // etc.
-    return USART2_IRQn;  // fallback
+    return ((IRQn_Type)-1);  // fallback
 }
 
 void uart_init(UsartConfig *usart_config)
@@ -85,7 +85,7 @@ int16_t uart_read(UsartConfig *cfg)
     return byte;
 }
 
-int8_t uart_send(UsartConfig *cfg, uint8_t byte)
+int8_t uart_send_byte(UsartConfig *cfg, uint8_t byte)
 {
     uint16_t next = (cfg->tx_head + 1) % cfg->tx_buf_size;
     if (next == cfg->tx_tail) return -1;    // TX buffer full, drop byte
@@ -102,10 +102,12 @@ void uart_handle_isr(UsartConfig *cfg)
   // On STM32F7, ORE/FE/NE/PE are cleared via ICR, NOT by reading RDR.
   // With RXNEIE set, an uncleared ORE re-triggers this IRQ forever and
   // starves the main loop (watchdog reset). Clear errors up front.
-  if (isr & (USART_ISR_ORE | USART_ISR_FE | USART_ISR_NE | USART_ISR_PE)) {
-      cfg->usart->ICR = USART_ICR_ORECF | USART_ICR_FECF
-                      | USART_ICR_NCF   | USART_ICR_PECF;
-  }
+  uint32_t icr = 0;
+  if (isr & USART_ISR_ORE) { icr |= USART_ICR_ORECF; cfg->ore_count++; }
+  if (isr & USART_ISR_FE)  { icr |= USART_ICR_FECF;  cfg->fe_count++;  }
+  if (isr & USART_ISR_NE)  { icr |= USART_ICR_NCF;   cfg->ne_count++;  }
+  if (isr & USART_ISR_PE)  { icr |= USART_ICR_PECF;  cfg->pe_count++;  }
+  if (icr) cfg->usart->ICR = icr;
 
   if (isr & USART_ISR_RXNE) {
 	  uint8_t byte;
@@ -115,6 +117,9 @@ void uart_handle_isr(UsartConfig *cfg)
 	  if (next != cfg->rx_tail) {     // drop on overflow
 		  cfg->rx_buf[cfg->rx_head] = byte;
 		  cfg->rx_head = next;
+	  }
+	  else {
+	      cfg->rx_overflow_count++;  // ring buffer full
 	  }
   }
 

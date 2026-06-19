@@ -13,7 +13,7 @@
 void uart_app_send_buf(uart_bsp_cfg_t *cfg, const uint8_t *buf, uint16_t len)
 {
 	for (uint16_t i = 0; i < len; i++) {
-		while (uart_send(&cfg->usart, buf[i]) < 0) {
+		while (uart_send_byte(&cfg->usart, buf[i]) < 0) {
 			/* spin-wait until TX ring buffer has space */
 		}
 	}
@@ -73,13 +73,22 @@ int16_t uart_app_read_line(uart_bsp_cfg_t *cfg, char *buf, uint16_t max_len)
 	return -1;
 }
 
-void uart_app_run(uart_bsp_cfg_t *cfg)
+void uart_app_handle_error(uart_bsp_cfg_t *cfg)
 {
-	static uint32_t last_counter = 0;
 
-	if (counter_1s != last_counter) {
-		bsp_led_toggle(&led_1);
-		uart_app_printf(cfg, "counter: %lu\r\n", counter_1s);
-		last_counter = counter_1s;
-	}
+}
+
+void uart_app_service(void)
+{
+#ifdef ENABLE_UART1
+	uart_app_handle_error(&uart1_bsp);
+#endif
+#ifdef ENABLE_UART2
+	uart_app_handle_error(&uart2_bsp);
+#endif
+#ifdef ENABLE_UART3
+	uart_app_handle_error(&uart3_bsp);
+#endif
+
+
 }

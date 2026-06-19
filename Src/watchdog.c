@@ -24,7 +24,7 @@ void iwdg_init(IWDG_PRESCALER_VALUE prescaler, uint16_t counter)
 	if (counter >= 4095) counter = 4095; // 12 bit max value
 	IWDG->RLR = counter;
 
-	while (IWDG->SR & (IWDG_SR_PVU | IWDG_SR_RVU));  // wait for latch
+	//while (IWDG->SR & (IWDG_SR_PVU | IWDG_SR_RVU));  // wait for latch
 	IWDG->KR = 0xcccc; // Activate watchdog
 }
 

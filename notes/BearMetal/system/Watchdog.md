@@ -10,3 +10,6 @@ This value sets the prescaler for the LSI oscillator
 
 ### IWDG->RLR (Reload Register)
 This determines the value to be loaded to the counter each time the KR is set to 0xAAAA, and then counts down from this value. Time our is a function of this and PR
+
+### DBGMCU->APB1FZ
+Setting this freezes the IWDG counter when the debugger halts the core. Without this enabled, debug operation would cause the IWDG to reset

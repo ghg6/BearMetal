@@ -44,5 +44,5 @@ void tim7_tick_callback(void)
 
 void USART3_IRQHandler(void)
 {
-	uart_handle_isr(&uart2_bsp.usart);
+	uart_handle_isr(&uart3_bsp.usart);
 }

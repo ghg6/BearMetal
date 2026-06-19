@@ -2,6 +2,7 @@
 CLAUDE.md
 archive/
 .claude/
+.settings/
 
 # Build output folders
 Debug/

@@ -24,4 +24,6 @@ void cache_enable(void);
 
 void system_init(void);
 
+void system_service(void);
+
 #endif /* SYSTEM_H_ */
