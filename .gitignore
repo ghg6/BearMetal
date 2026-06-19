@@ -3,5 +3,6 @@ CLAUDE.md
 archive/
 .claude/
 
-*.o
-*.d
+# Build output folders
+Debug/
+Release/
