@@ -113,7 +113,9 @@ void system_init(void)
 
     mpu_init();
 
-    watchdog_init();
+    // Initiate watchdogs
+    iwdg_init(IWDG_PRESCALER, IWDG_COUNTER);
+    //wwdg_init();
 
     // Only enable systick if not using RTOS
 	#ifndef USING_RTOS

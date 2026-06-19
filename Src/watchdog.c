@@ -7,7 +7,7 @@
 
 #include "watchdog.h"
 
-void iwdg_init(void)
+void iwdg_init(IWDG_PRESCALER_VALUE prescaler, uint16_t counter)
 {
     // Freeze the IWDG counter whenever the debugger halts the core.
     // Without this, the watchdog keeps counting while you sit on a
@@ -16,22 +16,21 @@ void iwdg_init(void)
     // debugger is attached, so it is safe to leave set in release.
     DBGMCU->APB1FZ |= DBGMCU_APB1_FZ_DBG_IWDG_STOP;
 
-    // Timeout ~2 seconds
     // Prevents system hang if code crashes
 	IWDG->KR = 0x5555; // Enable Access
-	IWDG->PR = 0b011; // Scale 32
-	IWDG->RLR = 2000; // ~2 seconds
+
+	IWDG->PR = prescaler; // Defined in config.h
+
+	if (counter >= 4095) counter = 4095; // 12 bit max value
+	IWDG->RLR = counter;
+
+	while (IWDG->SR & (IWDG_SR_PVU | IWDG_SR_RVU));  // wait for latch
 	IWDG->KR = 0xcccc; // Activate watchdog
 }
 
 void kick_watchdog(void)
 {
 	IWDG->KR = 0xaaaa;
-}
-
-void watchdog_init(void)
-{
-	iwdg_init();
 }
 
 

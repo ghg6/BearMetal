@@ -1,3 +1,2 @@
-../Src/watchdog.c:10:6:iwdg_init	4	static
+../Src/watchdog.c:10:6:iwdg_init	16	static
 ../Src/watchdog.c:27:6:kick_watchdog	4	static
-../Src/watchdog.c:32:6:watchdog_init	8	static

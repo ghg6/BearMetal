@@ -149,12 +149,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "isr/Timer.md",
+                "file": "system/Watchdog.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Timer"
+              "title": "Watchdog"
             }
           }
         ],
@@ -320,12 +320,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "b788c47bdc80909c",
+  "active": "19fccc0c038e6600",
   "lastOpenFiles": [
+    "system/fpu_enable.md",
+    "system/Watchdog.md",
+    "isr/Timer.md",
     "static/Pasted image 20260603210343.png",
     "static/Pasted image 20260603210310.png",
-    "system/watchdog_init.md",
-    "isr/Timer.md",
     "isr",
     "system/mpu_init.md",
     "system/systick_init.md",
@@ -361,9 +362,7 @@
     "gpio/gpio.md",
     "gpio",
     "clock/clock_init.md",
-    "system/fpu_enable.md",
     "static/Pasted image 20260215125941.png",
-    "static/Pasted image 20260214122722.png",
     "general/Bitwise Operation.md",
     "Welcome.md",
     "create a link.md"
