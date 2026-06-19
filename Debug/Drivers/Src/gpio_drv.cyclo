@@ -1,7 +1,0 @@
-../Drivers/Src/gpio_drv.c:11:20:set_2bit_field	1
-../Drivers/Src/gpio_drv.c:17:20:set_1bit_field	1
-../Drivers/Src/gpio_drv.c:22:20:set_4bit_af	1
-../Drivers/Src/gpio_drv.c:29:6:gpio_config	4
-../Drivers/Src/gpio_drv.c:51:6:gpio_write	2
-../Drivers/Src/gpio_drv.c:57:6:gpio_toggle	2
-../Drivers/Src/gpio_drv.c:64:9:gpio_read	1

@@ -1,2 +1,0 @@
-../Src/rcc.c:10:6:rcc_enable_gpio	12
-../Src/rcc.c:30:6:rcc_enable_usart	2

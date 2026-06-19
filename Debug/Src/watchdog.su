@@ -1,2 +1,0 @@
-../Src/watchdog.c:10:6:iwdg_init	16	static
-../Src/watchdog.c:27:6:kick_watchdog	4	static
